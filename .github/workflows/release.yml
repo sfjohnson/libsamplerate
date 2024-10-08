@@ -91,7 +91,7 @@ jobs:
           make
           mv src/libsamplerate.a ../libsamplerate-rpi-arm64.a
         env:
-          CC: $HOME/aarch64-rpi4-linux-gnu/bin/aarch64-rpi4-linux-gnu-gcc
+          CC: ${{ github.workspace }}/aarch64-rpi4-linux-gnu/bin/aarch64-rpi4-linux-gnu-gcc
 
       - name: Configure and make linux-x64
         run: |
