@@ -81,12 +81,10 @@ jobs:
       - name: Get RPi toolchain
         run: |
           wget https://github.com/sfjohnson/rpi-toolchain/releases/download/v0.1.8/aarch64-rpi4-linux-gnu.tar.xz
-          tar xvf aarch64-rpi4-linux-gnu.tar.xz
+          tar xf aarch64-rpi4-linux-gnu.tar.xz
 
       - name: Make RPi
         run: |
-          ls -la /home/runner/work/libsamplerate/libsamplerate
-          ls -la /home/runner/work/libsamplerate/libsamplerate/aarch64-rpi4-linux-gnu/bin
           mkdir build
           cd build
           cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DLIBSAMPLERATE_EXAMPLES=OFF ..
